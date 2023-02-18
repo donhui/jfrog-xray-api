@@ -1,0 +1,32 @@
+[project]
+name = "jfrog-xray-api"
+version = "0.0.1"
+authors = [
+  { name="Donghui Wang", email="977675308@qq.com" },
+]
+description = "Python wrapper for JFROG Xray REST API"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE.txt"}
+keywords = [
+    "jfrog",
+    "xray",
+    "jfrog-xray",
+    "devsecops"
+]
+dependencies = [
+    "requests"
+]
+# see https://pypi.org/pypi?%3Aaction=list_classifiers
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    'Topic :: Software Development'
+]
+
+[project.urls]
+homepage = "https://github.com/donhui/jfrog-xray-api"
+repository = "https://github.com/donhui/jfrog-xray-api.git"
+"Bug Tracker" = "https://github.com/donhui/jfrog-xray-api/issues"
