@@ -17,6 +17,7 @@ xray_rest_client = XrayRestClient(
     password='PASSWORD or API_KEY'
 )
 ```
+
 ## Components
 ### Find Component by Name
 ```python
@@ -78,4 +79,18 @@ print(response.json())
 ### Export Component Details
 ```python
 # TODO
+```
+
+## SUMMARY
+### Build Summary
+```python
+summary = xray_rest_client.summary
+response = summary.get_build_summary("build_name", "123")
+print(response.json())
+```
+### Artifact Summary
+```python
+summary = xray_rest_client.summary
+response = summary.get_artifact_summary(paths=["/Artifactory/pnnl/goss/goss-core-client/0.1.7/goss-core-client-0.1.7-sources.jar"])
+print(response.json())
 ```
