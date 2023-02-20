@@ -4,6 +4,7 @@ from requests.auth import HTTPBasicAuth
 from xray.system import XraySystem
 from xray.components import XrayComponents
 from xray.summary import XraySummary
+from xray.issues import XrayIssues
 
 
 class XrayRestClient(object):
@@ -23,3 +24,7 @@ class XrayRestClient(object):
     @property
     def summary(self):
         return XraySummary(base_url=self.base_url, session=self._session)
+
+    @property
+    def issues(self):
+        return XrayIssues(base_url=self.base_url, session=self._session)
