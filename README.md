@@ -94,3 +94,45 @@ summary = xray_rest_client.summary
 response = summary.get_artifact_summary(paths=["/Artifactory/pnnl/goss/goss-core-client/0.1.7/goss-core-client-0.1.7-sources.jar"])
 print(response.json())
 ```
+
+## Issues
+### Create Issue Event
+```python
+from xray.common import PackageType
+issues = xray_rest_client.issues
+response = issues.create_issue_event(
+    issue_id='test-2023-0221',
+    summary='test-2023-0221',
+    description='test-2023-0221',
+    package_type=PackageType.MAVEN,
+    component_id='com.test:test',
+    vulnerable_versions=["[1.0.10.2,)"],
+)
+print(response.json())
+```
+
+### Update Issue Event
+```python
+from xray.common import PackageType
+issues = xray_rest_client.issues
+response = issues.update_issue_event(
+    issue_id='test-2023-0221',
+    summary='test-2023-0221',
+    description='test-2023-0221 update',
+    package_type=PackageType.MAVEN,
+    component_id='com.test:test',
+    vulnerable_versions=["[1.0.10.2,)"],
+)
+print(response.content)
+```
+### Get Issue Event
+```python
+issues = xray_rest_client.issues
+# get issue event v1
+# Note: This API is deprecated in Xray version 3.51.0
+response = issues.get_issue_event_v1("test-2023-0221")
+# get issue event v2
+# Since: Xray  3.51.0
+response = issues.get_issue_event_v2("test-2023-0221")
+print(response.json())
+```
