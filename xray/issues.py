@@ -126,30 +126,18 @@ class XrayIssues(RestApiAccessor):
         )
         return response
 
-    def get_issue_event_v1(self, issue_id: str):
+    def get_issue_event(self, issue_id: str, api_version='v1'):
         """
         Gets an issue created by a vendor
-        Note: This API is deprecated in Xray version 3.51.0
         :param issue_id:
+        :param api_version: v1 is deprecated in Xray version 3.51.0 and v2 since 3.51.0
         :return:
         """
         assert len(issue_id) > 0
-        url = self.base_url + "/api/v1/events/" + issue_id
+        assert api_version in ['v1', 'v2']
+        url = self.base_url + "/api/{0}/events/{1}".format(api_version, issue_id)
         response = self.rest_get(
             url
         )
         return response
 
-    def get_issue_event_v2(self, issue_id: str):
-        """
-        Gets an issue created by a vendor
-        Since: Xray  3.51.0
-        :param issue_id:
-        :return:
-        """
-        assert len(issue_id) > 0
-        url = self.base_url + "/api/v2/events/" + issue_id
-        response = self.rest_get(
-            url
-        )
-        return response

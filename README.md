@@ -130,9 +130,9 @@ print(response.content)
 issues = xray_rest_client.issues
 # get issue event v1
 # Note: This API is deprecated in Xray version 3.51.0
-response = issues.get_issue_event_v1("test-2023-0221")
+response = issues.get_issue_event("test-2023-0221")
 # get issue event v2
 # Since: Xray  3.51.0
-response = issues.get_issue_event_v2("test-2023-0221")
+response = issues.get_issue_event("test-2023-0221", api_version="v2")
 print(response.json())
 ```
