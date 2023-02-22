@@ -7,6 +7,11 @@
 - [Install](#install)
 - [Usage](#usage)
   * [Authentication](#authentication)
+  * [SYSTEM](#system)
+    + [Create Bundle](#create-bundle)
+    + [Ping Request](#ping-request)  
+    + [Get Version](#get-version)
+    + [Metrics](#metrics)
   * [Components](#components)
     + [Find Component by Name](#find-component-by-name)
     + [Find Components by CVEs](#find-components-by-cves)
@@ -41,6 +46,32 @@ xray_rest_client = XrayRestClient(
     username='USERNAME',
     password='PASSWORD or API_KEY'
 )
+```
+
+## SYSTEM
+### Create Bundle
+```python
+system = xray_rest_client.system
+response = system.create_bundle("bundle-2023-001")
+print(response.json())
+```
+### Ping Request
+```python
+system = xray_rest_client.system
+response = system.system.send_ping()
+print(response.json())
+```
+### Get Version
+```python
+system = xray_rest_client.system
+response = system.get_version()
+print(response.json())
+```
+### Metrics
+```python
+system = xray_rest_client.system
+response = system.get_metrics()
+print(response.json())
 ```
 
 ## Components
