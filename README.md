@@ -1,6 +1,31 @@
 # Python wrapper for JFROG Xray REST API
 `jfrog-xray-api` is a live python package for JFrog Xray REST API. 
 
+# Tables of Contents
+
+<!-- toc -->
+- [Install](#install)
+- [Usage](#usage)
+  * [Authentication](#authentication)
+  * [Components](#components)
+    + [Find Component by Name](#find-component-by-name)
+    + [Find Components by CVEs](#find-components-by-cves)
+    + [Find CVEs by Components](#find-cves-by-components)
+    + [Get Component List Per Watch](#get-component-list-per-watch)
+    + [Get Artifact Dependency Graph](#get-artifact-dependency-graph)
+    + [Compare Artifacts](#compare-artifacts)
+    + [Get Build Dependency Graph](#get-build-dependency-graph)
+    + [Compare Builds](#compare-builds)
+    + [Export Component Details](#export-component-details)
+  * [SUMMARY](#summary)
+    + [Build Summary](#build-summary)
+    + [Artifact Summary](#artifact-summary)
+  * [ISSUES](#issues)   
+    + [Create Issue Event](#create-issue-event)
+    + [Update Issue Event](#update-issue-event)
+    + [Get Issue Event](#get-issue-event)
+<!-- tocstop -->
+
 # Install
 ```
 pip install jfrog-xray-api
