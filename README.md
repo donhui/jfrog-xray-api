@@ -1,6 +1,17 @@
 # Python wrapper for JFROG Xray REST API
 `jfrog-xray-api` is a live python package for JFrog Xray REST API. 
 
+[![jfrog-xray-api on PyPI](https://img.shields.io/pypi/v/jfrog-xray-api.svg)][1]
+[![jfrog-xray-api license](https://img.shields.io/pypi/l/jfrog-xray-api.svg)][2]
+[![jfrog-xray-api downloads](https://pepy.tech/badge/jfrog-xray-api)][3]
+[![jfrog-xray-api downloads/month](https://static.pepy.tech/badge/jfrog-xray-api/month)][3]
+
+
+[1]: https://pypi.python.org/pypi/jfrog-xray-api
+[2]: https://github.com/donhui/jfrog-xray-api/blob/master/LICENSE
+[3]: https://pepy.tech/project/jfrog-xray-api
+
+
 # Tables of Contents
 
 <!-- toc -->
