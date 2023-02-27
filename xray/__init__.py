@@ -5,6 +5,7 @@ from xray.system import XraySystem
 from xray.components import XrayComponents
 from xray.summary import XraySummary
 from xray.issues import XrayIssues
+from xray.scanning import XrayScanning
 
 
 class XrayRestClient(object):
@@ -28,3 +29,7 @@ class XrayRestClient(object):
     @property
     def issues(self):
         return XrayIssues(base_url=self.base_url, session=self._session)
+
+    @property
+    def scanning(self):
+        return XrayScanning(base_url=self.base_url, session=self._session)
