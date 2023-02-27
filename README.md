@@ -40,6 +40,8 @@
     + [Create Issue Event](#create-issue-event)
     + [Update Issue Event](#update-issue-event)
     + [Get Issue Event](#get-issue-event)
+  * [SCANNING](#scanning)   
+    + [Scan Artifact](#scan-artifact)  
 <!-- tocstop -->
 
 # Install
@@ -201,5 +203,13 @@ response = issues.get_issue_event("test-2023-0221")
 # get issue event v2
 # Since: Xray  3.51.0
 response = issues.get_issue_event("test-2023-0221", api_version="v2")
+print(response.json())
+```
+
+## SCANNING
+### Scan Artifact
+```python
+scanning = xray_rest_client.scanning
+response = scanning.scan_artifact("docker://image_name:image_tag")
 print(response.json())
 ```
