@@ -42,6 +42,7 @@
     + [Get Issue Event](#get-issue-event)
   * [SCANNING](#scanning)   
     + [Scan Artifact](#scan-artifact)  
+    + [Scan Build](#scan-build)
 <!-- tocstop -->
 
 # Install
@@ -211,5 +212,15 @@ print(response.json())
 ```python
 scanning = xray_rest_client.scanning
 response = scanning.scan_artifact("docker://image_name:image_tag")
+print(response.json())
+```
+### Scan Build
+```python
+scanning = xray_rest_client.scanning
+# scan build v1
+response = scanning.scan_build("build_name", "build_number")
+# scan build v2
+# Starting from Xray version 3.42.3
+response = scanning.scan_build("build_name", "build_number", api_version='v2')
 print(response.json())
 ```
