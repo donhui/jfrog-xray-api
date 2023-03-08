@@ -140,4 +140,3 @@ class XrayIssues(RestApiAccessor):
             url
         )
         return response
-

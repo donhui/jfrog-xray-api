@@ -155,5 +155,3 @@ class XrayComponents(RestApiAccessor):
         :return:
         """
         pass
-
-
