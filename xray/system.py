@@ -78,4 +78,3 @@ class XraySystem(RestApiAccessor):
             url
         )
         return response
-
