@@ -1,12 +1,11 @@
 class RestApiAccessor:
+    """
+    Implements operations with REST API
+    """
 
     def __init__(self, base_url, session):
         self._session = session
         self.base_url = base_url
-
-    """
-    Implements operations with REST API
-    """
 
     def rest_get(self,
                  url,

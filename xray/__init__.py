@@ -8,7 +8,7 @@ from xray.issues import XrayIssues
 from xray.scanning import XrayScanning
 
 
-class XrayRestClient(object):
+class XrayRestClient:
     def __init__(self, *, base_url, username, password):
         self.base_url = base_url
         self._session = requests.Session()

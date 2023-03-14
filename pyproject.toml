@@ -28,6 +28,11 @@ classifiers = [
     'Topic :: Software Development'
 ]
 
+[project.optional-dependencies]
+pylint = [
+    "pylint"
+]
+
 [project.urls]
 homepage = "https://github.com/donhui/jfrog-xray-api"
 repository = "https://github.com/donhui/jfrog-xray-api.git"
@@ -35,3 +40,16 @@ repository = "https://github.com/donhui/jfrog-xray-api.git"
 
 [tool.setuptools.dynamic]
 version = {file = ["version.txt"]}
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint.design]
+max-args = 10
+
+[tool.pylint."messages control"]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+]

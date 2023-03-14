@@ -1,14 +1,15 @@
+from enum import Enum
 from xray.utils.http import RestApiAccessor
 
 
-class XrayIssueType:
+class XrayIssueType(Enum):
     SECURITY = 'Security'
     VERSIONS = 'Versions'
     PERFORMANCE = 'Performance'
     OTHER = 'Other'
 
 
-class XrayIssueSeverity:
+class XrayIssueSeverity(Enum):
     INFORMATION = 'Information'
     LOW = 'Low'
     MEDIUM = 'Medium'
@@ -33,7 +34,7 @@ class XrayIssues(RestApiAccessor):
                            provider="Custom",
                            issue_type=XrayIssueType.SECURITY,
                            severity=XrayIssueSeverity.LOW,
-                           cve_list=[]
+                           cve_list=None
                            ):
         """
         Allows adding a custom issue
@@ -49,6 +50,8 @@ class XrayIssues(RestApiAccessor):
         :param cve_list:
         :return:
         """
+        if cve_list is None:
+            cve_list = []
         url = self.base_url + "/api/v1/events"
         json_data = {
             "id": issue_id,
@@ -83,8 +86,8 @@ class XrayIssues(RestApiAccessor):
                            provider="Custom",
                            issue_type=XrayIssueType.SECURITY,
                            severity=XrayIssueSeverity.LOW,
-                           cve_list=[],
-                           source_list=[],
+                           cve_list=None,
+                           source_list=None,
                            ):
         """
         Allows an issue vendor to update an issue event
@@ -102,6 +105,10 @@ class XrayIssues(RestApiAccessor):
         :return:
         """
         assert len(issue_id) > 0
+        if cve_list is None:
+            cve_list = []
+        if source_list is None:
+            source_list = []
         url = self.base_url + "/api/v1/events/" + issue_id
         json_data = {
             "id": issue_id,
@@ -135,7 +142,7 @@ class XrayIssues(RestApiAccessor):
         """
         assert len(issue_id) > 0
         assert api_version in ['v1', 'v2']
-        url = self.base_url + "/api/{0}/events/{1}".format(api_version, issue_id)
+        url = self.base_url + f'/api/{api_version}/events/{issue_id}'
         response = self.rest_get(
             url
         )

@@ -59,7 +59,6 @@ class XrayComponents(RestApiAccessor):
         Gets a list of components associated with a specific watch
         :return:
         """
-        pass
 
     def get_artifact_dependency_graph(self, artifact_path: str):
         """
@@ -154,4 +153,3 @@ class XrayComponents(RestApiAccessor):
         TODO
         :return:
         """
-        pass
