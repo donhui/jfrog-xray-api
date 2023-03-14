@@ -5,6 +5,7 @@
 [![jfrog-xray-api license](https://img.shields.io/pypi/l/jfrog-xray-api.svg)][2]
 [![jfrog-xray-api downloads](https://pepy.tech/badge/jfrog-xray-api)][3]
 [![jfrog-xray-api downloads/month](https://static.pepy.tech/badge/jfrog-xray-api/month)][3]
+![pylint](https://github.com/donhui/jfrog-xray-py/actions/workflows/pylint.yml/badge.svg)
 
 
 [1]: https://pypi.python.org/pypi/jfrog-xray-api
