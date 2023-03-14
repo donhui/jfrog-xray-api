@@ -1,3 +1,4 @@
+from xray.exceptions import ArgsException
 from xray.utils.http import RestApiAccessor
 
 
@@ -20,7 +21,7 @@ class XraySummary(RestApiAccessor):
             json_data['paths'] = kwargs['paths']
 
         if "checksums" not in kwargs and "paths" not in kwargs:
-            raise Exception("checksums or paths cannot be null.")
+            raise ArgsException("checksums or paths cannot be null.")
 
         response = self.rest_post(
             url,
@@ -35,7 +36,7 @@ class XraySummary(RestApiAccessor):
         :param build_number:
         :return:
         """
-        url = self.base_url + "/api/v1/summary/build?build_name={0}&build_number={1}".format(build_name, build_number)
+        url = self.base_url + f'/api/v1/summary/build?build_name={build_name}&build_number={build_number}'
         response = self.rest_get(
             url
         )

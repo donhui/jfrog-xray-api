@@ -1,4 +1,7 @@
-class PackageType:
+from enum import Enum
+
+
+class PackageType(Enum):
     ALPINE = "alpine"
     BOWER = "bower"
     CHEF = "chef"
