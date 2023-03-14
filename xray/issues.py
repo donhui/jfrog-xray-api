@@ -32,8 +32,8 @@ class XrayIssues(RestApiAccessor):
                            component_id: str,
                            vulnerable_versions: list,
                            provider="Custom",
-                           issue_type=XrayIssueType.SECURITY,
-                           severity=XrayIssueSeverity.LOW,
+                           issue_type=XrayIssueType.SECURITY.value,
+                           severity=XrayIssueSeverity.LOW.value,
                            cve_list=None
                            ):
         """
@@ -84,8 +84,8 @@ class XrayIssues(RestApiAccessor):
                            component_id: str,
                            vulnerable_versions: list,
                            provider="Custom",
-                           issue_type=XrayIssueType.SECURITY,
-                           severity=XrayIssueSeverity.LOW,
+                           issue_type=XrayIssueType.SECURITY.value,
+                           severity=XrayIssueSeverity.LOW.value,
                            cve_list=None,
                            source_list=None,
                            ):
