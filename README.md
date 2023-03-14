@@ -175,7 +175,7 @@ response = issues.create_issue_event(
     issue_id='test-2023-0221',
     summary='test-2023-0221',
     description='test-2023-0221',
-    package_type=PackageType.MAVEN,
+    package_type=PackageType.MAVEN.value,
     component_id='com.test:test',
     vulnerable_versions=["[1.0.10.2,)"],
 )
@@ -190,7 +190,7 @@ response = issues.update_issue_event(
     issue_id='test-2023-0221',
     summary='test-2023-0221',
     description='test-2023-0221 update',
-    package_type=PackageType.MAVEN,
+    package_type=PackageType.MAVEN.value,
     component_id='com.test:test',
     vulnerable_versions=["[1.0.10.2,)"],
 )
