@@ -55,3 +55,60 @@ class XrayScanning(RestApiAccessor):
             json_data=json_data
         )
         return response
+
+    def get_scan_status_for_artifact(self, repository_pkg_type, path, sha256):
+        """
+        Get scan status for artifact
+        :param repository_pkg_type:
+        :param path:
+        :param sha256:
+        :return:
+        """
+        url = self.base_url + "/api/v1/scan/status/artifact"
+        json_data = {
+            "repository_pkg_type": repository_pkg_type,
+            "path": path,
+            "sha256": sha256,
+        }
+        response = self.rest_post(
+            url,
+            json_data=json_data
+        )
+        return response
+
+    def get_scan_status_for_build(self, name, version, project=None):
+        """
+        Get scan status for build
+        :param name:
+        :param version:
+        :param project:
+        :return:
+        """
+        url = self.base_url + "/api/v1/scan/status/build"
+        json_data = {
+            "name": name,
+            "version": version,
+        }
+        if project is not None:
+            json_data['project'] = project
+        response = self.rest_post(
+            url,
+            json_data=json_data
+        )
+        return response
+
+    def scan_now(self, path):
+        """
+        Enables you to index resources on-demand, even those that were not marked for indexing
+        :param path:
+        :return:
+        """
+        url = self.base_url + "/api/v2/index"
+        json_data = {
+            "repo_path": path
+        }
+        response = self.rest_post(
+            url,
+            json_data=json_data
+        )
+        return response
