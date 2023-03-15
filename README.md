@@ -44,6 +44,8 @@
   * [SCANNING](#scanning)   
     + [Scan Artifact](#scan-artifact)  
     + [Scan Build](#scan-build)
+    + [Scan Status](#scan-status)
+    + [Scan Now](#scan-now)
 <!-- tocstop -->
 
 # Install
@@ -223,5 +225,35 @@ response = scanning.scan_build("build_name", "build_number")
 # scan build v2
 # Starting from Xray version 3.42.3
 response = scanning.scan_build("build_name", "build_number", api_version='v2')
+print(response.json())
+```
+
+### Scan Status
+```python
+from xray.common import PackageType
+scanning = xray_rest_client.scanning
+# get scan status for artifact
+response = scanning.get_scan_status_for_artifact(
+    PackageType.NPM.value,
+    'npm-local/static-module-3.0.4.tar.gz',
+    'b0a887f6e5c16134b7d1280c2150d38811357642d56c622c6f7f6b239f668608'
+)
+print(response.json())
+# get scan status for build
+scanning = xray_rest_client.scanning
+response = scanning.get_scan_status_for_build("test-build", "1")
+print(response.json())
+# get scan status for build with project
+scanning = xray_rest_client.scanning
+response = scanning.get_scan_status_for_build("test-build", "1", project="proj1")
+print(response.json())
+```
+
+### Scan Now
+```python
+from xray.common import PackageType
+scanning = xray_rest_client.scanning
+# scan now
+response = scanning.scan_now("local-maven-repo/org/jenkins-ci/main/jenkins-war/2.289.1/jenkins-war-2.289.1.war")
 print(response.json())
 ```
